@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Harumi Gifts Box</title>
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="build/assets/app-Che9ewJ7.css">
+    
+    <style>
+        html {
+            background-color: oklch(1 0 0);
+        }
+        html.dark {
+            background-color: oklch(0.145 0 0);
+        }
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        .birthday-message {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        html.dark .birthday-message {
+            color: #fff;
+        }
+        .sub-message {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+        html.dark .sub-message {
+            color: #ccc;
+        }
+        .final-text {
+            font-size: 1.25rem;
+            color: #888;
+            margin-top: 2rem;
+        }
+        html.dark .final-text {
+            color: #aaa;
+        }
+    </style>
+
+    <!-- Dark mode script -->
+    <script>
+        (function() {
+            const appearance = 'system';
+            if (appearance === 'system') {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    methods: ["POST"]
+                }
+            }
+        };
+    </script>
+
+    <!-- Module preloads -->
+    <link rel="modulepreload" href="build/assets/app-CzZmFL3t.js">
+    <link rel="modulepreload" href="build/assets/countdown-message-7EfcM1j_.js">
+    <link rel="modulepreload" href="build/assets/three.module-DofM9FX5.js">
+
+    <!-- Application scripts -->
+    <script type="module" src="build/assets/app-CzZmFL3t.js"></script>
+    <script type="module" src="build/assets/countdown-message-7EfcM1j_.js"></script>
+</head>
+<body class="font-sans antialiased">
+    <div id="app" data-page='{
+        "component": "views/countdown-message",
+        "props": {
+            "errors": {},
+            "name": "GiftsBox",
+            "quote": {
+                "message": "The only way to do great work is to love what you do.",
+                "author": "Steve Jobs"
+            },
+            "auth": {
+                "user": null
+            },
+            "countdown": {
+                "id": "1b03397e-5603-4040-aa22-b8c560c32362",
+                "backgroundText": "HAPPYBIRTHDAY",
+                "messages": [
+                    "Happy Birthday",
+                    "23 Years",
+                    "23.07.02",
+                    "Khánh Dung"
+                ],
+                "finalText": "Wishing you all the best on your special day!",
+                "music": "1Z6PXDxirNxpxGgKYjpogdVj-44rvXJ1f",
+                "created_at": "2025-06-30T15:25:18.000000Z",
+                "updated_at": "2025-06-30T15:25:18.000000Z"
+            },
+            "countdownId": "1b03397e-5603-4040-aa22-b8c560c32362"
+        },
+        "url": "/countdown/1b03397e-5603-4040-aa22-b8c560c32362",
+        "version": "2ab92502b6effb2b24b1a7377a8987bb"
+    }'></div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+/* Reset & Base Styles */
+*, *::before, *::after, ::backdrop {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root Variables */
+:root {
+  /* Colors */
+  --background: oklch(1 0 0);
+  --foreground: oklch(.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(.145 0 0);
+  --primary: oklch(.205 0 0);
+  --primary-foreground: oklch(.985 0 0);
+  --secondary: oklch(.97 0 0);
+  --secondary-foreground: oklch(.205 0 0);
+  --muted: oklch(.97 0 0);
+  --muted-foreground: oklch(.556 0 0);
+  --accent: oklch(.97 0 0);
+  --accent-foreground: oklch(.205 0 0);
+  --destructive: oklch(.577 .245 27.325);
+  --destructive-foreground: oklch(.577 .245 27.325);
+  --border: oklch(.922 0 0);
+  --input: oklch(.922 0 0);
+  --ring: oklch(.87 0 0);
+
+  /* Chart Colors */
+  --chart-1: oklch(.646 .222 41.116);
+  --chart-2: oklch(.6 .118 184.704);
+  --chart-3: oklch(.398 .07 227.392);
+  --chart-4: oklch(.828 .189 84.429);
+  --chart-5: oklch(.769 .188 70.08);
+
+  /* Sidebar Colors */
+  --sidebar: oklch(.985 0 0);
+  --sidebar-foreground: oklch(.145 0 0);
+  --sidebar-primary: oklch(.205 0 0);
+  --sidebar-primary-foreground: oklch(.985 0 0);
+  --sidebar-accent: oklch(.97 0 0);
+  --sidebar-accent-foreground: oklch(.205 0 0);
+  --sidebar-border: oklch(.922 0 0);
+  --sidebar-ring: oklch(.87 0 0);
+
+  /* Typography */
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  /* Border Radius */
+  --radius: .625rem;
+}
+
+/* Dark Theme */
+.dark {
+  --background: oklch(.145 0 0);
+  --foreground: oklch(.985 0 0);
+  --card: oklch(.145 0 0);
+  --card-foreground: oklch(.985 0 0);
+  --popover: oklch(.145 0 0);
+  --popover-foreground: oklch(.985 0 0);
+  --primary: oklch(.985 0 0);
+  --primary-foreground: oklch(.205 0 0);
+  --secondary: oklch(.269 0 0);
+  --secondary-foreground: oklch(.985 0 0);
+  --muted: oklch(.269 0 0);
+  --muted-foreground: oklch(.708 0 0);
+  --accent: oklch(.269 0 0);
+  --accent-foreground: oklch(.985 0 0);
+  --destructive: oklch(.396 .141 25.723);
+  --destructive-foreground: oklch(.637 .237 25.331);
+  --border: oklch(.269 0 0);
+  --input: oklch(.269 0 0);
+  --ring: oklch(.439 0 0);
+  
+  /* Dark Theme Chart Colors */
+  --chart-1: oklch(.488 .243 264.376);
+  --chart-2: oklch(.696 .17 162.48);
+  --chart-3: oklch(.769 .188 70.08);
+  --chart-4: oklch(.627 .265 303.9);
+  --chart-5: oklch(.645 .246 16.439);
+  
+  /* Dark Theme Sidebar Colors */
+  --sidebar: oklch(.205 0 0);
+  --sidebar-foreground: oklch(.985 0 0);
+  --sidebar-primary: oklch(.985 0 0);
+  --sidebar-primary-foreground: oklch(.985 0 0);
+  --sidebar-accent: oklch(.269 0 0);
+  --sidebar-accent-foreground: oklch(.985 0 0);
+  --sidebar-border: oklch(.269 0 0);
+  --sidebar-ring: oklch(.439 0 0);
+}
+
+/* Custom Font Faces */
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/font/OpenSans.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mali';
+  src: url('/font/Mali.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DancingScript';
+  src: url('/font/DancingScript.ttf') format('truetype');
+}
+
+/* Base Elements */
+html, :host {
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: inherit;
+}
+
+/* Form Elements */
+select:focus, input:focus {
+  outline: none;
+}
+
+input, select {
+  padding: 10px;
+}
+
+/* Canvas Styles */
+.dot-canvas {
+  z-index: 0;
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .dot-canvas {
+    transform-origin: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(90deg) translate(-50%, -50%);
+    width: 100vh !important;
+    height: 100vw !important;
+  }
+  
+  body {
+    overflow: hidden;
+  }
+}
+
+/* Rotation Container */
+@media screen and (orientation: portrait) {
+  .rotate-container {
+    background: #000;
+    width: 100vh;
+    height: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  .rotated-content {
+    transform-origin: 0 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: rotate(-90deg);
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .rotate-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .rotated-content {
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+}
+
+/* Animations */
+@keyframes enter {
+  0% {
+    opacity: var(--tw-enter-opacity, 1);
+    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
+               scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1))
+               rotate(var(--tw-enter-rotate, 0));
+  }
+}
+
+@keyframes exit {
+  to {
+    opacity: var(--tw-exit-opacity, 1);
+    transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0)
+               scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1))
+               rotate(var(--tw-exit-rotate, 0));
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
